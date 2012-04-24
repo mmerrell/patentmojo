@@ -3,6 +3,7 @@ package com.tastymonster.automation.director.inventory;
 import com.tastymonster.automation.director.base.AbstractDirector;
 import com.tastymonster.automation.director.base.IEntityDirector;
 
+
 public class PatentDirector extends AbstractDirector implements IEntityDirector<PatentFields> {
 
 	@Override

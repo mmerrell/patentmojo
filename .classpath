@@ -13,6 +13,6 @@
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/TastyMonster"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/tastymonster"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
