@@ -3,9 +3,9 @@
     <rootDir>/</rootDir>
     <exportSource>false</exportSource>
     <reloadable>true</reloadable>
-    <redirectLogger>false</redirectLogger>
+    <redirectLogger>true</redirectLogger>
     <updateXml>true</updateXml>
     <warLocation></warLocation>
     <extraInfo></extraInfo>
-    <webPath>/PatentMojo</webPath>
+    <webPath>/patentmojo</webPath>
 </tomcatProjectProperties>
