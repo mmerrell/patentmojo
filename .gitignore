@@ -2,7 +2,7 @@
 ###################
 test-output
 target
-automation/generated/**
+src/main/generated/**
 work
 
 # Eclipse stuff #
