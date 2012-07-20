@@ -1,9 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>PatentMojo</groupId>
-	<artifactId>PatentMojo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+
+	<groupId>com.tastymonster</groupId>
+	<artifactId>patentmojo</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -12,29 +15,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-core</artifactId>
-			<version>1.5.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>1.5.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-util</artifactId>
-			<version>1.5.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty.aggregate</groupId>
-			<artifactId>jetty-all-server</artifactId>
-			<version>7.5.0.v20110901</version>
-		</dependency>
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.4</version>
+			<version>1.6.6</version>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -56,7 +39,13 @@
 			<artifactId>velocity-tools</artifactId>
 			<version>2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.tastymonster</groupId>
+			<artifactId>tastymonster</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -74,15 +63,6 @@
 				<artifactId>cobertura-maven-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
-					<!-- <instrumentation> -->
-					<!-- <ignores> -->
-					<!-- <ignore>com.example.boringcode.*</ignore> -->
-					<!-- </ignores> -->
-					<!-- <excludes> -->
-					<!-- <exclude>com/example/dullcode/**/*.class</exclude> -->
-					<!-- <exclude>com/example/**/*Test.class</exclude> -->
-					<!-- </excludes> -->
-					<!-- </instrumentation> -->
 					<check>
 						<branchRate>0</branchRate>
 						<lineRate>0</lineRate>
@@ -110,12 +90,21 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
 			</plugin>
 		</plugins>
 	</build>
+
 	<reporting>
 		<plugins>
 			<plugin>
@@ -125,4 +114,5 @@
 			</plugin>
 		</plugins>
 	</reporting>
+
 </project>

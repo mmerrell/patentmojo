@@ -5,6 +5,16 @@ target
 automation/generated/**
 work
 
+# Eclipse stuff #
+#################
+.classpath
+.project
+
+# Maven stuff #
+###############
+.settings*
+.settings/
+
 # Compiled source #
 ###################
 *.com
