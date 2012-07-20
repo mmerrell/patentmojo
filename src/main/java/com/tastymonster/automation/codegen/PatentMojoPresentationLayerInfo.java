@@ -8,7 +8,9 @@ public class PatentMojoPresentationLayerInfo extends PresentationLayerInfo imple
 
 	private static final String DERIVED_PAGE_PATH = "src/main/java/com/tastymonster/automation/page/base/";
 	private static final String BASE_PAGE_PATH = "src/main/java/com/tastymonster/automation/page/base/";
-	private static final String TEMPLATE_PATH = "src/main/webapp/WEB-INF/templates/";
+	private static final String TEMPLATE_PATH = "src/main/webapp/templates/";
+	private static final String CODEGEN_TEMPLATE_PATH = "src/main/java/com/tastymonster/automation/codegen/templates/";
+	private static final String GENERATED_PAGE_PATH = "src/main/generated/";
 
 	@Override
 	public List<File> getFileList() {
@@ -31,5 +33,15 @@ public class PatentMojoPresentationLayerInfo extends PresentationLayerInfo imple
 	@Override
 	public String getDerivedPagePath() {
 		return DERIVED_PAGE_PATH;
+	}
+	
+	@Override
+	public String getGeneratedPagePath() {
+		return GENERATED_PAGE_PATH;
+	}
+
+	@Override
+	public String getCodegenTemplatePath() {
+		return CODEGEN_TEMPLATE_PATH;
 	}
 }

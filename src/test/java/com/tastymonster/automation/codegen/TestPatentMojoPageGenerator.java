@@ -9,7 +9,6 @@ public class TestPatentMojoPageGenerator {
 	public void testGeneratePages() {
 		//Generate the pages
 		PageGenerator generator = new PageGenerator();
-		generator.setCodegenTemplatePath( "src/main/java/com/tastymonster/automation/codegen/templates/" );
 		generator.setPresentationLayer( new PatentMojoPresentationLayerInfo() );
 		generator.generatePages();
 	}
