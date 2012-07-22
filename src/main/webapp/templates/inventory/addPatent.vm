@@ -9,7 +9,7 @@
 	#formInput( "inventorName" "Inventor (comma-separated)" "patent.inventorName" )
 	#formInput( "inventorTitle" "Inventor Title" "patent.inventorTitle" )
 	<br />
-	#button( "addInventor" "addInventor.vm" "Add Inventor" )
+	#button( "addInventor" "../addInventor.vm" "Add Inventor" )
 	#formInput( "companyName" "Company Name" "patent.companyName" )
 	#formInput( "industry" "Industry" "patent.industry" )
     </table>

@@ -19,19 +19,16 @@ public class UserDirector extends AbstractDirector implements IEntityDirector<Us
 	@Override
 	public void navigate( UserFields fields ) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void update( UserFields oldFields, UserFields newFields ) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void delete( UserFields fields ) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

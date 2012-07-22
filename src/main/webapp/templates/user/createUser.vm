@@ -12,7 +12,7 @@
         #formInput( "securityQuestionField" "Security Question" "user.securityQuestion" )
         #formPassword( "securityAnswerField" "Security Answer" "user.securityAnswer" )
     	</table>
-    	#formButton( "btnSubmit" "landing.vm" "Submit" )
-    	#button( "guestLogin" "landing.vm" "Guest" )
+    	#formButton( "btnSubmit" "../landing.vm" "Submit" )
+    	#button( "guestLogin" "../landing.vm" "Guest" )
 	#formEnd
 #divEnd ## wrapper
