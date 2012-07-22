@@ -7,8 +7,40 @@ This is a small web application and automation framework, composed for a minimal
 
 For now, play around, enjoy, and remember--the app is intentionally simplistic and terrible.
 
+Pre-requisites:
+===============
+
+- Java JDK 1.6 or later
+- Maven, configured to be executable from command-line
+- Everything else should auto-configure itself with Maven
+
+Optional:
+- IDE of your choice. I've included instructions for both Eclipse and IntelliJ, though you don't really need either
+
 To Use
 ==========
+
+This assumes you have installed the tastymonster framework (i.e. you have followed the steps in the README from that project)
+- From the patentmojo root folder, run the following command:
+   mvn test - Ensures that everything is working, and also generates the first round of Automation Page Objects for the test framework
+   mvn jetty:run - Launches the war file within a jetty server
+   
+
+- Open a browser at http://localhost:8080/patentmojo/index.vm
+
+You should see the fully rendered and functioning web app. It's not designed well enough to look "good", but it should at least look like a 
+web site
+
+Eclipse:
+- You'll need the m2eclipse plugin, and to ensure it can understand how to use git
+- Alternatively, you can handle all the git and Maven stuff from the command-line and just use the IDE to work on the files
+
+IntelliJ IDEA:
+
+
+
+
+
 When you pull this project and import it into Eclipse, you'll probably see red marks and lots of entries in the Problems tab. This is for 2 reasons:
 
 1) You may not have pulled down the TastyMonster project, imported it, and made sure the PatentMojo project depends on it. You should see this line in the .classpath file:
