@@ -44,4 +44,8 @@ public class PatentMojoPresentationLayerInfo extends PresentationLayerInfo imple
 	public String getCodegenTemplatePath() {
 		return CODEGEN_TEMPLATE_PATH;
 	}
+	
+	public String getTemplatePath() {
+		return TEMPLATE_PATH;
+	}
 }
