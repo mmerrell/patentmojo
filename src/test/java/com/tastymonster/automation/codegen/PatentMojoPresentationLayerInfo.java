@@ -6,11 +6,11 @@ import java.util.List;
 
 public class PatentMojoPresentationLayerInfo extends PresentationLayerInfo implements IPresentationLayerInfo {
 
-	private static final String DERIVED_PAGE_PATH = "src/main/java/com/tastymonster/automation/page/base/";
-	private static final String BASE_PAGE_PATH = "src/main/java/com/tastymonster/automation/page/base/";
+	private static final String DERIVED_PAGE_PATH = "src/test/java/com/tastymonster/automation/page/base/";
+	private static final String BASE_PAGE_PATH = "src/test/java/com/tastymonster/automation/page/base/";
 	private static final String TEMPLATE_PATH = "src/main/webapp/templates/";
-	private static final String CODEGEN_TEMPLATE_PATH = "src/main/java/com/tastymonster/automation/codegen/templates/";
-	private static final String GENERATED_PAGE_PATH = "src/main/generated/com/tastymonster/automation/page/base/";
+	private static final String CODEGEN_TEMPLATE_PATH = "src/test/java/com/tastymonster/automation/codegen/templates/";
+	private static final String GENERATED_PAGE_PATH = "src/test/generated/com/tastymonster/automation/page/base/";
 
 	@Override
 	public List<File> getFileList() {
