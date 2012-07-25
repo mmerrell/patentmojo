@@ -5,7 +5,7 @@ An example web app for demonstrating the power of the tastymonster test framewor
 
 This is a small web application and automation framework, composed for a minimal demo given at the Selenium Conference in London April 17, 2012. Many things still need to be worked out and improved, but this is being made public so that people can have a look at how we did the things we did. It is our hope that we may be able to expand this into a full-fledged framework atop Selenium/WebDriver, and that the Page Object generation ideas in here can be made agnostic to any presentation layer implementation out there.
 
-For now, play around, enjoy, and remember--the app is intentionally simplistic and terrible.
+For now, play around, enjoy, and remember--the web app itself is intentionally simplistic and terrible. Our intention is for you to have a look at the ideas behind the testing.
 
 Pre-requisites:
 ===============
@@ -21,45 +21,20 @@ To Use
 ==========
 
 This assumes you have installed the tastymonster framework (i.e. you have followed the steps in the README from that project)
-- From the patentmojo root folder, run the following command:
-   mvn test - Ensures that everything is working, and also generates the first round of Automation Page Objects for the test framework
-   mvn jetty:run - Launches the war file within a jetty server
-   
-
-- Open a browser at http://localhost:8080/patentmojo/index.vm
-
-You should see the fully rendered and functioning web app. It's not designed well enough to look "good", but it should at least look like a 
-web site
 
 Eclipse:
-- You'll need the m2eclipse plugin, and to ensure it can understand how to use git
-- Alternatively, you can handle all the git and Maven stuff from the command-line and just use the IDE to work on the files
+- git clone https://github.com/mmerrell/patentmojo.git
+- From eclipse, create a new Java Project by pointing to this folder
+- Right-click on the project, then Configure->Convert to Maven Project
+- In com.tastymonster.automation.codegen, Right-click TestPatentMojoPageGenerator.java, and Run As->TestNG
+(Click Proceed, to proceed even though there are errors)
 
-IntelliJ IDEA:
+- Refresh the project
+- Right-click src/main/generated, then Build Path->Use As Source Folder
 
+- mvn jetty:run
 
+- Open a browser at http://localhost:8080/patentmojo/index.vm
+- Locate TestUsers.java, right-click, then Run As->TestNG
 
-
-
-When you pull this project and import it into Eclipse, you'll probably see red marks and lots of entries in the Problems tab. This is for 2 reasons:
-
-1) You may not have pulled down the TastyMonster project, imported it, and made sure the PatentMojo project depends on it. You should see this line in the .classpath file:
-
-    	<classpathentry combineaccessrules="false" kind="src" path="/tastymonster"/>
-
-If you don't, go into Project->Settings->Java Build Path, and under the Projects tab, add TastyMonster.
-
-2) You haven't generated the page object model yet
-
- - Open the file TestPatentMojoPageGenerator.java, and run it as a TestNG test
- - After you do this, Refresh the project
-
-You should see, under automation/generated/src/com/tastymonster/automation/page/base, a bunch of files called Base*Page.java. 
-
-Once these have been generated, your red marks and Problem entries should go away. 
-
-If you have the tomcat manager plugin configured correctly, start Tomcat from the eclipse controls. The settings should be properly configured to deploy to localhost:8080/PatentMojo/index.vm
-
-Now that you have your webapp up and running, try to run the TestNG file TestUser.java. If all goes well and the dependencies work, you should see Firefox pop up and run a simple test.
-
-This is a brand new project, based on a very well-built, stable platform. If something is wrong, it is undoubtedly solveable and something I've done in trying to extricate it from its original home. Please send me feedback and let me know what is going wrong, and I will do my utmost to help.
+You should see the fully rendered and functioning web app. It's not designed well enough to look "good", but it should at least look like a web site
