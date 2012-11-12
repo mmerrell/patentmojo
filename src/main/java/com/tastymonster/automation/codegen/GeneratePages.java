@@ -1,12 +1,9 @@
 package com.tastymonster.automation.codegen;
 
-import org.testng.annotations.Test;
 
-@Test
-public class TestPatentMojoPageGenerator {
+public class GeneratePages {
 
-	@Test( groups = { "integration" } )
-	public void testGeneratePages() {
+	public static void main( String[] args ) {
 		//Generate the pages
 		PageGenerator generator = new PageGenerator();
 		generator.setPresentationLayer( new PatentMojoPresentationLayerInfo() );

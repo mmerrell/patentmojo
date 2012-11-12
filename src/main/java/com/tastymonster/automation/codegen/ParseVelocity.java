@@ -81,6 +81,7 @@ public class ParseVelocity implements IPresentationParser {
 
 	/**
 	 * Sets the member variable pageContents by reading the file contents
+	 * @param pageContents 
 	 * @param path
 	 */
 	public void setPageContents( String pageContents ) {
