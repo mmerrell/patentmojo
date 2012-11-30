@@ -10,7 +10,11 @@ public class PatentMojoPresentationLayerInfo extends PresentationLayerInfo imple
 	private static final String BASE_PAGE_PATH = "src/test/java/com/tastymonster/automation/page/base/";
 	private static final String TEMPLATE_PATH = "src/main/webapp/templates/";
 	private static final String CODEGEN_TEMPLATE_PATH = "src/test/java/com/tastymonster/automation/codegen/templates/";
-	private static final String GENERATED_PAGE_PATH = "src/test/generated/com/tastymonster/automation/page/base/";
+	
+	//TODO I'd like to make this a different folder, so it can be cleaned easily. At the moment I'm not sure how to do that, because
+	// putting the files in src/test/generated/com... would not be part of the "maven convention". The question is, can I put it 
+	// in a different folder and keep the IDE *and* Maven happy?
+	private static final String GENERATED_PAGE_PATH = "src/test/java/com/tastymonster/automation/page/base/";
 
 	@Override
 	public List<File> getFileList() {
