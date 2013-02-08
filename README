@@ -22,15 +22,15 @@ To Use
 
 This assumes you have installed the tastymonster framework (i.e. you have followed the steps in the README from that project)
 
-Eclipse:
+Prior to using any IDE, you need to generate some files before it will compile:
+
+From the command-line
 - git clone https://github.com/mmerrell/patentmojo.git
+- mvn -P generatePages exec:java clean verify
+
+Eclipse:
 - From eclipse, create a new Java Project by pointing to this folder
 - Right-click on the project, then Configure->Convert to Maven Project
-- In com.tastymonster.automation.codegen, Right-click TestPatentMojoPageGenerator.java, and Run As->TestNG
-(Click Proceed, to proceed even though there are errors)
-
-- Refresh the project
-- Right-click src/main/generated, then Build Path->Use As Source Folder
 
 - mvn jetty:run
 
