@@ -2,14 +2,16 @@
 ###################
 test-output
 target
-src/test/generated/**
+src/test/java/com/tastymonster/automation/page/base/*.java
 work
 
-# Eclipse stuff #
+# IDE stuff #
 #################
 .classpath
 .project
 bin/
+*.iml
+.idea/
 
 # Maven stuff #
 ###############
@@ -56,5 +58,3 @@ Thumbs.db
 *.jar
 *.war
 *.ear
-
-automation/generated/src/com/tastymonster/automation/page/base/*
