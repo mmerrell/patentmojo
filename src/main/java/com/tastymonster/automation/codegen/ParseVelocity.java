@@ -82,7 +82,6 @@ public class ParseVelocity implements IPresentationParser {
 	/**
 	 * Sets the member variable pageContents by reading the file contents
 	 * @param pageContents 
-	 * @param path
 	 */
 	public void setPageContents( String pageContents ) {
 		this.pageContents = pageContents;
@@ -109,6 +108,7 @@ public class ParseVelocity implements IPresentationParser {
 		
 		//Clickables
 		macroNameToWebElement.put( "link", new WebElementDetails( LinkWebElement.class ) );
+        macroNameToWebElement.put( "linkNewTab", new WebElementDetails( LinkWebElement.class ) );
 		macroNameToWebElement.put( "button", new WebElementDetails( ButtonWebElement.class ) );
 	}
 	
@@ -157,13 +157,12 @@ public class ParseVelocity implements IPresentationParser {
 
 	/**
 	 * Split up the velocity macro parameters and put them into a map. The map should contain an "id" at the very least
-	 * @param m
 	 * @return
 	 */
 	private Map<String, String> getFieldAttributesFromParameters( String macroParams ) {
 		Map<String, String> fieldAttributes = new HashMap<String, String>();
 		List<String> paramList = Arrays.asList( macroParams.split( "\\s+" ) );
-		List<String> scrubbedParams = scrubParams( paramList );
+		List<String> scrubbedParams = scrubParams( getSplitParamList( macroParams ) );
 		
 		//The first parameter will be the id
 		if ( scrubbedParams.size() >=1 ) {
@@ -181,7 +180,16 @@ public class ParseVelocity implements IPresentationParser {
 		return fieldAttributes;
 	}
 
-	private List<String> scrubParams( List<String> paramList ) {
+	private List<String> getSplitParamList( String macroParams ) {
+	    List<String> params = new ArrayList<String>();
+	    Matcher m = Pattern.compile( "\"([^\"]*)\"" ).matcher( macroParams );
+	    while ( m.find() ) {
+	        params.add( m.group() );
+	    }
+        return params;
+    }
+
+    private List<String> scrubParams( List<String> paramList ) {
 		List<String> scrubbedList = new ArrayList<String>();
 		for ( String string: paramList ) {
 			scrubbedList.add( AutomationUtils.normalizeFieldName( string ) );
@@ -189,6 +197,23 @@ public class ParseVelocity implements IPresentationParser {
 		return scrubbedList;
 	}
 
+    /**
+     * Normalizes a field name using the following steps:
+     * 
+     * 1) Removes all non-word characters and underscores
+     * 2) Checks to make sure we're not left with a java keyword
+     * 3) Makes it into proper camelCase
+     * 
+     * It will return an empty string if the initial value passed in or the resulting value after normalization is null or empty.
+     * This allows you the freedom to handle it how you want without the restriction of a try/catch
+     * @param fieldName
+     * @return
+     */
+	@Override
+    public String normalizeFieldName( String fieldName ) {
+	    return AutomationUtils.normalizeFieldName( fieldName );
+	}
+    
 	/**
 	 * Returns a WebElementDetails object mapped to the correct type for this element. If the element is one to be ignored, 
 	 * this will return null, so you must check for that 
@@ -219,7 +244,6 @@ public class ParseVelocity implements IPresentationParser {
 	
 	/**
 	 * Read and return the contents of the file. This should only be called from the ParserFactory
-	 * @param path
 	 */
 	public void initPageContents() {
 		try {

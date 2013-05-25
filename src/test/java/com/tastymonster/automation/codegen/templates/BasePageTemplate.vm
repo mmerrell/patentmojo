@@ -8,16 +8,16 @@ import com.tastymonster.automation.page.base.AbstractAutomationPage;
 public class ${pageName} extends ${parentPage} {
 ##WebEleemnts
 #foreach( $field in $fields )
-	public final ${field.getTypeName()} ${field.getFieldName()} = new ${field.getTypeName()}( "${field.getId()}", this ); // $field.getMacroName()
+    public final ${field.getTypeName()} ${field.getFieldName()} = new ${field.getTypeName()}( "${field.getId()}", this ); // $field.getMacroName()
 #end
 
-	##package-protected constructor
+    ##package-protected constructor
     ${pageName}() {
-	}
-	
-	public String getPageURI() {
-		return "${pageURI}";
-	}
+    }
+    
+    public String getPageURI() {
+        return "${pageURI}";
+    }
 ##Tables
 ##End
 }

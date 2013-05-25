@@ -2,8 +2,9 @@ package com.tastymonster.automation.codegen;
 
 import java.util.Set;
 
-public class ParseFreeMarker implements IPresentationParser {
+import com.tastymonster.automation.util.AutomationUtils;
 
+public class ParseFreeMarker implements IPresentationParser {
 	@Override
 	public Set<FieldDetails> buildFieldDetails() {
 		return null;
@@ -19,8 +20,9 @@ public class ParseFreeMarker implements IPresentationParser {
 		return null;
 	}
 
-	protected String normalizeFieldName(String string) {
-		return null;
+	@Override
+	public String normalizeFieldName( String fieldName ) {
+		return AutomationUtils.normalizeFieldName( fieldName );
 	}
 
 	@Override

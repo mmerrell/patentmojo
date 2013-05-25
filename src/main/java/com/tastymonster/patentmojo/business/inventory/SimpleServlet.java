@@ -61,8 +61,11 @@ public class SimpleServlet {
 		mainMenuTabs.add( "contact" );
 		return mainMenuTabs;
 	}
-	
-	/** To test exception handling in templates. */
+
+	/**
+	 * To test exception handling in templates
+	 * @return
+	 */
 	public boolean whine() {
 		throw new IllegalArgumentException();
 	}

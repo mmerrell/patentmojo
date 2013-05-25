@@ -19,7 +19,8 @@ public class ParseJSF implements IPresentationParser {
 		return null;
 	}
 
-	protected String normalizeFieldName(String string) {
+	@Override
+	public String normalizeFieldName(String string) {
 		return null;
 	}
 

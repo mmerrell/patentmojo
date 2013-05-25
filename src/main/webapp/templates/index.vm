@@ -30,7 +30,7 @@
         				<p>
         					Here's a button. But what if you want to change it to a link?
         				</p>
-						#link( "btn_Change" "inventory/addPatent.vm" "Change" )
+						#link( "btn_Change" "inventory/addPatent.vm" "Add Patent!" )
         			#divEnd ## arcuTempus
         			#divStartBox( "viverraAmet" )
         				<h3>Farther down the sidebar</h3>
@@ -43,6 +43,7 @@
         					<li>#link( "link2" "#" "Link 2" )</li>
         					<li class="last">#link( "link3" "#" "Link 3" )</li>
         				</ul>
+        				#linkNewTab( "addPatentNewTab" "inventory/addPatent.vm" "Add patent in new Tab!" )
         			#divEnd ## viverraAmet
         		#divEnd ## sidebar
         		#clearfix

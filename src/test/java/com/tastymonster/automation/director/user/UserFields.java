@@ -8,16 +8,16 @@ import com.tastymonster.automation.element.base.ITextBox;
 import com.tastymonster.automation.page.base.BaseCreateUserPage;
 
 public class UserFields extends AbstractFields implements IDirectorFields {
-
 	protected final BaseCreateUserPage page = newPage( BaseCreateUserPage.class );
+
 	public final IClickable btnSubmit = page.btnSubmit;
-	public final ITextBox securityQuestionField = page.usersecurityQuestion;
-	public final ITextBox lastNameField = page.userlastName;
+	public final ITextBox securityQuestionField = page.securityQuestionField;
+	public final ITextBox lastNameField = page.lastNameField;
 	public final IDiv wrapper = page.wrapper;
-	public final ITextBox phoneField = page.userphone;
+	public final ITextBox phoneField = page.phoneField;
 	public final ITextBox emailField = page.emailField;
-	public final ITextBox firstNameField = page.userfirstName;
-	public final ITextBox securityAnswerField = page.usersecurityAnswer;
+	public final ITextBox firstNameField = page.firstNameField;
+	public final ITextBox securityAnswerField = page.securityAnswerField;
 	
 	public UserFields() {
 		super.fields.add( securityAnswerField );

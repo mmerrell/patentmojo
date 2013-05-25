@@ -65,6 +65,10 @@
     <a id="$id" href="$href">$label</a>
 #end
 
+#macro( linkNewTab $id $href $label )
+    <a id="$id" href="$href" target="_blank">$label</a>
+#end
+
 #macro( horizontalTabBar $tabs )
 		<ul>
         	<li class="first current_page_item"><a href="#">$tabs.get( 0 )</a></li>
