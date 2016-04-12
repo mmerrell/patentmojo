@@ -253,7 +253,7 @@ public class ParseVelocity implements IPresentationParser {
 			//Strip off the src path, and get the full path/filename for this, relative to the site root
 			//TODO - this should come from IPresentationParser.getTemplatePath()
 			String filePath = file.getPath().replace( "src/main/webapp/templates/", "" );
-			this.setPageURI( filePath );
+			this.setPageURI( StringEscapeUtils.escapeJava(filePath ));
 			this.setPageName( file.getName().replace( ".vm", "" ) );
 		} catch ( IOException e ) {
 			e.printStackTrace();
