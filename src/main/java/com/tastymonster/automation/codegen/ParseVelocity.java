@@ -17,6 +17,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.StringEscapeUtils; 
 
 import com.tastymonster.automation.element.base.ButtonWebElement;
 import com.tastymonster.automation.element.base.DivWebElement;
