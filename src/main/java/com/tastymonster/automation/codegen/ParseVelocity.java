@@ -16,7 +16,6 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 
 import com.tastymonster.automation.element.base.ButtonWebElement;
@@ -298,7 +297,7 @@ public class ParseVelocity implements IPresentationParser {
                 }
                 filePath = filePath.substring(1);
             }
-            this.setPageURI(StringEscapeUtils.escapeJava(filePath));
+            this.setPageURI(filePath);
             this.setPageName(file.getName().replace(".vm", ""));
         } catch (IOException e) {
             e.printStackTrace();
