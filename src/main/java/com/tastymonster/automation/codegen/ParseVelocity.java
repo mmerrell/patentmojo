@@ -190,12 +190,14 @@ public class ParseVelocity implements IPresentationParser {
         // The first parameter will be the id
         if (scrubbedParams.size() >= 1) {
             fieldAttributes.put("id", scrubbedParams.get(0));
+            if (scrubbedParams.size() >= 4)
+                fieldAttributes.put("testName", scrubbedParams.get(3));
         }
 
         // If the macro contains a third parameter, it's the field label
-        if (scrubbedParams.size() >= 4) {
+        if (scrubbedParams.size() >= 5) {
             String normalizedFieldName = AutomationUtils
-                    .normalizeFieldName(scrubbedParams.get(3));
+                    .normalizeFieldName(scrubbedParams.get(4));
             fieldAttributes.put("fieldName", normalizedFieldName);
         } else {
             fieldAttributes.put("fieldName", scrubbedParams.get(0));
