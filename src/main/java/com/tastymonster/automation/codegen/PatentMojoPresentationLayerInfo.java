@@ -11,6 +11,7 @@ public class PatentMojoPresentationLayerInfo extends PresentationLayerInfo
     private static final String BASE_PAGE_PATH = "src/test/java/com/tastymonster/automation/page/base/";
     private static final String TEMPLATE_PATH = "src/main/webapp/templates/";
     private static final String CODEGEN_TEMPLATE_PATH = "src/test/java/com/tastymonster/automation/codegen/templates/";
+    private static final String PAGE_ROOT = "http://localhost:8080/patentmojo/";
 
     // TODO I'd like to make this a different folder, so it can be cleaned
     // easily. At the moment I'm not sure how to do that, because
@@ -67,5 +68,10 @@ public class PatentMojoPresentationLayerInfo extends PresentationLayerInfo
     @Override
     public String getGeneratedTestPagePath() {
         return GENERATED_TEST_PAGE_PATH;
+    }
+
+    @Override
+    public String getPageRootPath() {
+        return PAGE_ROOT;
     }
 }

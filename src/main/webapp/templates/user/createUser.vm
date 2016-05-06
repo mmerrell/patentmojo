@@ -9,9 +9,8 @@
         #formInput( "lastNameField" "Last Name" "user.lastName" "testLastName" )
         #formInput( "emailField" "Email" "user.email" "testEmail")
         #formInput( "phoneField" "Phone #" "user.phone" "testPhone")
-        #formInput( "securityQuestionField" "Security Question" "user.securityQuestion" "testSQ")
+        ##formInput( "securityQuestionField" "Security Question" "user.securityQuestion" "testSQ")
         #formPassword( "securityAnswerField" "Security Answer" "user.securityAnswer" "testSA" )
-        #formInput( "firstTestNameField" "First Name" "user.firstName" "testFirstTesName" )
     	</table>
     	#formButton( "btnSubmit" "../landing.vm" "Submit" )
     	#button( "guestLogin" "../landing.vm" "Guest" )
