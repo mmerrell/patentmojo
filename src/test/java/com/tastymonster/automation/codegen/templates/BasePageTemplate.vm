@@ -18,6 +18,10 @@ public class ${pageName} extends ${parentPage} {
     public String getPageURI() {
         return "${pageURI}";
     }
+    
+    public String getPageSiteRoot() {
+        return "${pageRoot}";
+    }
 ##Tables
 ##End
 }

@@ -2,15 +2,34 @@ package ${package};
 
 ##imports
 import com.tastymonster.automation.element.base.*;
-import com.tastymonster.automation.page.base.AbstractAutomationPage;
+import com.tastymonster.automation.director.base.AbstractFields;
+import com.tastymonster.automation.director.base.IDirectorFields;
+import ${importPackage};
 
 ##Class declaration
-public class ${fieldsClassName} extends AbstractFields  {
+public class ${pageName} extends AbstractFields implements IDirectorFields  {
 ##WebElements
-	protected final ${pageName} page = newPage( ${pageName}.class );
+    protected final ${parentPage} page = newPage( ${parentPage}.class );
+	
 #foreach( $field in $fields )
-	public final ${field.getInterface()} ${field.getFieldName()} = page.${field.getId()};
+#if (${field.getTypeName()} == "ButtonWebElement")
+    public final IClickable ${field.getFieldName()} = page.${field.getId()};
+#else
+#if (${field.getInterface()} != "IDiv")
+    public final ${field.getInterface()} ${field.getFieldName()} = page.${field.getId()};
 #end
+#end
+#end
+
+##Constructor
+    public ${pageName}() {
+#foreach( $field in $fields )
+#if (${field.getTypeName()} != "ButtonWebElement" && ${field.getInterface()} != "IDiv" && ${field.getInterface()} != "IClickable")
+    fields.add(${field.getFieldName()});
+#end
+#end
+    }
+
 ##Tables
 ##End
 }

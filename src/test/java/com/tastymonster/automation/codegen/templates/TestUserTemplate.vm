@@ -1,0 +1,32 @@
+package com.tastymonster.automation.user;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.tastymonster.automation.director.user.UserDirector;
+import com.tastymonster.automation.director.user.UserFields;
+
+public class ${pageName} {
+
+    @Test(groups = { "admin", "user" })
+    public void testCreateUser() {
+        //Set the fields on the user object
+        UserFields fields = new UserFields();
+        
+#foreach( $field in $fields )
+#if (${field.getTypeName()} != "ButtonWebElement" && ${field.getInterface()} == "ITextBox")
+        fields.${field.getFieldName()}.setValue("${testData.get($field.getTestName())}");
+#end
+#end
+
+        // Create the user however the director needs to
+        UserDirector director = new UserDirector();
+        director.create(fields);
+        director.navigate(fields);
+
+        // Make sure the user exists in the UI
+        Assert.assertTrue(director.exists(fields),
+                "The User should exist in the interface");
+    }
+
+}
